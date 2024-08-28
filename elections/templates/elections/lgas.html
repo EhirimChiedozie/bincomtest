@@ -1,0 +1,16 @@
+{% extends 'elections/base.html' %}
+{% block content %}
+    <h2>Local Governments in Delta</h2>
+    <table border="1">
+        <tr>
+            <th>L.G.A ID</th>
+            <th>L.G.A NAME</th>
+        </tr>
+        {% for key, value in lga_dict.items %}
+            <tr>
+                <td>{{ key }}</td>
+                <td><a href="{% url 'ward_list' %}">{{ value }}</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock content %}

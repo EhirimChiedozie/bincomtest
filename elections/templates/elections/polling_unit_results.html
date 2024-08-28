@@ -1,0 +1,16 @@
+{% extends 'elections/base.html' %}
+{% block content %}
+    <h1>Polling Unit Results</h1>
+    <table border="1">
+        <tr>
+            <th>Party Name</th>
+            <th>Results</th>
+        </tr>
+        {% for polling_unit in polling_units %}
+            <tr>
+                <td>{{ polling_unit.party_abbreviation }}</td>
+                <td>{{ polling_unit.party_score }}</td>
+            </tr>        
+        {% endfor %}
+    </table>
+{% endblock content %}
